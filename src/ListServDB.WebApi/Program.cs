@@ -22,7 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Setup logging first to capture the entire startup process
 var logger = ConfigureLogging(builder);
-logger.LogInformation("=== ListServDB Application Starting ===");
+logger.LogInformation("=== RefWireDB Application Starting ===");
 logger.LogInformation("Environment: {Environment}", builder.Environment.EnvironmentName);
 
 // Configure configuration sources
@@ -30,14 +30,14 @@ logger.LogInformation("Configuring application settings...");
 ConfigureAppSettings(builder);
 
 // Load configuration
-logger.LogInformation("Loading ListServ configuration...");
+logger.LogInformation("Loading RefWire configuration...");
 var listServConfig = builder.Configuration
-                         .GetSection("LISTSERV")
+                         .GetSection("REFWIRE")
                          .Get<ListServOptions>()
-                    ?? throw new InvalidOperationException("Missing LISTSERV configuration section!");
+                    ?? throw new InvalidOperationException("Missing REFWIRE configuration section!");
 
 // Configure options with the section
-builder.Services.Configure<ListServOptions>(builder.Configuration.GetSection("LISTSERV"));
+builder.Services.Configure<ListServOptions>(builder.Configuration.GetSection("REFWIRE"));
 builder.Services.AddSingleton(listServConfig);
 
 // Register all services
@@ -82,7 +82,7 @@ void ConfigureAppSettings(WebApplicationBuilder builder)
     builder.Configuration.Sources.Clear();
 
     // Add environment variables as primary source
-    logger.LogDebug("Adding environment variables configuration source with prefix 'LISTSERV__'");
+    logger.LogDebug("Adding environment variables configuration source with prefix 'REFWIRE__'");
 
     // Configure environment-specific settings
     if (builder.Environment.IsDevelopment())
@@ -177,7 +177,7 @@ void RegisterCoreServices(WebApplicationBuilder builder, ILogger<Program> logger
     logger.LogDebug("Adding link enricher service");
     builder.Services.AddSingleton<ILinkEnricher, LinkEnricher>();
 
-    logger.LogDebug("Adding ListServ API");
+    logger.LogDebug("Adding RefWire API");
     builder.Services.AddSingleton<IListServApi, ListServApi>();
 
     logger.LogDebug("Adding health metrics provider");

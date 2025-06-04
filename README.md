@@ -4,7 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/coretravis/RefWire.svg?style=social)](https://github.com/coretravis/RefWire/network)
 [![GitHub issues](https://img.shields.io/github/issues/coretravis/RefWire.svg)](https://github.com/coretravis/RefWire/issues)
 
-**RefWire** is a **lightweight, high-performance reference data service** designed to efficiently manage and serve **mostly static datasets**—such as countries, currencies, languages, or product categories. RefWire Instantly transforms a JSON array of objects into ready-to-use APIs. It excels at providing rapid lookups and searches by leveraging **intelligent in-memory caching and efficient indexing**. Complementing the core service, the RefWire ecosystem includes the [RefWireCLI](https://github.com/coretravis/RefWireCLI) for comprehensive command-line management, [ListStor](https://refwire.online/stor) for accessing ready-to-use standardized datasets (**RefPack**), and [RefWire Explor](https://refwire.online/explor) for easy API interaction and testing. It includes features such as pluggable persistence, optional API key security, rate limiting, and simple distributed orchestration capabilities.
+**RefWire** is a **lightweight, high-performance reference data service** designed to efficiently manage and serve **mostly static datasets**—such as countries, currencies, languages, or product categories. RefWire Instantly transforms a JSON array of objects into ready-to-use APIs. It excels at providing rapid lookups and searches by leveraging **intelligent in-memory caching and efficient indexing**. Complementing the core service, the RefWire ecosystem includes the [RefWireCLI](https://github.com/coretravis/RefWireCLI) for comprehensive command-line management, [RefStor](https://refwire.online/stor) for accessing ready-to-use standardized datasets (**RefPack**), and [RefWire Explor](https://refwire.online/explor) for easy API interaction and testing. It includes features such as pluggable persistence, optional API key security, rate limiting, and simple distributed orchestration capabilities.
 
 ---
 
@@ -20,7 +20,7 @@
   - [Security & Rate Limiting](#security--rate-limiting)
   - [Distributed Orchestration](#distributed-orchestration)
 - [CLI Management – RefWireCLI](#cli-management--refwirecli)
-- [ListStor – Standardized Datasets](#liststor--standardized-datasets)
+- [RefStor – Standardized Datasets](#liststor--standardized-datasets)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -83,7 +83,7 @@ Using DockerHub
   This will prompt you for:
   - RefWire Url: Your RefWire Instance URL `http://localhost:7010`
   - ApiKey (Use 'ThisIsTheApiKey' for demo purposes but make sure to set a strong key for production via Configuration)
-  - ListStor Server Url (optional): Set this to `https://refpack.refwire.online` to use the `refwire dataset pull {datasetID}` command which gives you access to standardized datasets         found at https://stor.refwire.online
+  - RefStor Server Url (optional): Set this to `https://refpack.refwire.online` to use the `refwire dataset pull {datasetID}` command which gives you access to standardized datasets         found at https://stor.refwire.online
   - **Note: You will only need to set the configuration only once**
 
   **Add your first dataset**
@@ -125,7 +125,7 @@ Using DockerHub
   - Fully configurable through environment variables and configuration files.
   - Available as a container for easy deployment.
   - **[RefWire CLI](https://github.com/coretravis/RefWireCLI)** An open-source npm CLI tool for managing RefWire instances. It provides full commands to administer API keys, datasets (including an **interactive dataset import wizard**), items, and distributed instances directly from the command line.
-  - **[ListStor](https://refwire.online/stor)** A dedicated repository of standardized (**RefPack**), categorized reference datasets, enabling quick access to pre-built, ready-to-use datasets.
+  - **[RefStor](https://refwire.online/stor)** A dedicated repository of standardized (**RefPack**), categorized reference datasets, enabling quick access to pre-built, ready-to-use datasets.
 
 ---
 
@@ -184,9 +184,9 @@ For installation and detailed usage, visit the [RefWireCLI GitHub repository](ht
 
 ---
 
-## ListStor – Standardized Datasets
+## RefStor – Standardized Datasets
 
-**ListStor** is a repository of categorized, standardized (RefPack) reference/lookup datasets designed for immediate use with RefWire. ListStor provides ready-to-use datasets—such as countries, currencies, languages, and more—so you don’t have to spend time manually gathering data. Access and download these datasets from [ListStor](https://refwire.online/stor) or use them directly from the RefWireCLI with a simple command.
+**RefStor** is a repository of categorized, standardized (RefPack) reference/lookup datasets designed for immediate use with RefWire. RefStor provides ready-to-use datasets—such as countries, currencies, languages, and more—so you don’t have to spend time manually gathering data. Access and download these datasets from [RefStor](https://refwire.online/stor) or use them directly from the RefWireCLI with a simple command.
 
 ```bash
 refwire dataset pull {datasetID}

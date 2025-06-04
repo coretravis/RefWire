@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <UserSecretsId>848b22fb-6714-47e4-b95c-7785188a4b94</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ListServDB.Core\ListServDB.Core.csproj" />
+    <ProjectReference Include="..\ListServDb.Orchestration.Azure.Blob\ListServDb.Orchestration.Azure.Blob.csproj" />
+    <ProjectReference Include="..\ListServDB.Persistence.Azure.Blob\ListServDB.Persistence.Azure.Blob.csproj" />
+    <ProjectReference Include="..\ListServDB.Persistence.FileSystem\ListServDB.Persistence.FileSystem.csproj" />
+    <ProjectReference Include="..\ListServDB.Persistence\ListServDB.Persistence.csproj" />
+    <ProjectReference Include="..\ListServDB.Security.Azure.Blob\ListServDB.Security.Azure.Blob.csproj" />
+    <ProjectReference Include="..\ListServDB.Security.File\ListServDB.Security.File.csproj" />
+    <ProjectReference Include="..\ListServDB.Security\ListServDB.Security.csproj" />
+  </ItemGroup>
+
+</Project>

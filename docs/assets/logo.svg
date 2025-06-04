@@ -1,0 +1,25 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Database cylinders -->
+  <ellipse cx="30" cy="15" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M10,15 v20 q0,8 20,8 t20,-8 v-20" fill="none" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Connection lines between databases -->
+  <path d="M30,23 v12" stroke="currentColor" stroke-width="2"/>
+  <path d="M20,21 v14" stroke="currentColor" stroke-width="2"/>
+  <path d="M40,21 v14" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Data visualization elements -->
+  <rect x="22" y="35" width="16" height="3" fill="currentColor"/>
+  <rect x="26" y="30" width="8" height="3" fill="currentColor"/>
+  <rect x="18" y="40" width="24" height="3" fill="currentColor"/>
+  
+  <!-- Data points -->
+  <circle cx="15" cy="15" r="2" fill="currentColor"/>
+  <circle cx="25" cy="13" r="2" fill="currentColor"/>
+  <circle cx="35" cy="14" r="2" fill="currentColor"/>
+  <circle cx="45" cy="15" r="2" fill="currentColor"/>
+  
+  <!-- Grid pattern in background -->
+  <path d="M5,50 h50 M5,55 h50" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+  <path d="M10,45 v15 M20,45 v15 M30,45 v15 M40,45 v15 M50,45 v15" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+</svg>

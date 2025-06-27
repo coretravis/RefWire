@@ -157,6 +157,22 @@ void RegisterServices(WebApplicationBuilder builder, ILogger<Program> logger)
     // Configure CORS
     ConfigureCors(builder, logger);
 
+    // Configure Swagger/OpenAPI
+
+    logger.LogInformation("Configuring Swagger/OpenAPI documentation...");
+    builder.Services.AddSwaggerServices(options =>
+    {
+        options.Title = "RefWire";
+        options.Version = "v1.0";
+        options.Description = "A comprehensive API for managing RefWire instance";
+        options.ContactName = "RefWire";
+        options.ContactEmail = "info@refwire.online";
+        options.ContactUrl = "https://refwire.online";
+        options.LicenseName = "MIT License";
+        options.LicenseUrl = "https://opensource.org/licenses/MIT";
+    });
+
+
     logger.LogInformation("=== Service Registration Complete ===");
 }
 
@@ -413,6 +429,9 @@ void ConfigureMiddleware(WebApplication app, ILogger<Program> logger)
     // Request logging middleware
     logger.LogDebug("Adding request logging middleware");
     app.UseMiddleware<RequestLoggingMiddleware>();
+
+    // Swagger/OpenAPI middleware
+    app.UseSwaggerServices();
 
     // Routing middleware
     logger.LogDebug("Adding routing middleware");
